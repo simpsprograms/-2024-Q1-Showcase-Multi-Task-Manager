@@ -18,4 +18,6 @@ Clock Module
 -A Module that displays a randomised date. In order to close this module, you have to imput the correct day of the week that corresponds to the date. A higher difficulty will generate a date further away from the current date (based on the system clock)
 
 Concentration 32
--Inspired by the playground game "Concentration 64", where players take turns to say a valid word without repeating a word already said, this Module pulls from a database of words and either displays a new word, or repeats a word already displayed. The player has to identify whether a word has been repeated or if it is original. Points are gained for correct guesses while points are deducted for incorrect guesses. The Module closes when the point count reaches a certain number. A higher difficulty will result in a higher point requirement.
+-Inspired by the playground game "Concentration 64", where players take turns to say a valid word without repeating a word already said, this Module pulls from a database of words and either displays a new word, or repeats a word already displayed. The player has to identify whether a word has been repeated or if it is original, by pressing the "Sure" and "Nope" buttons respectively. Points are gained for correct guesses while points are deducted for incorrect guesses. The Module closes when the point count reaches a certain number. A higher difficulty will result in a higher point requirement.
+
+The showcase video shows how these 5 Modules work, as well as showcasing how these modules will be imported and ran.

@@ -2,12 +2,13 @@ extends Window
 
 var difficulty = 10;
 var day = 1;
-var date = "2024-01-19"
+var date = ""
 var date_dict = {}
+var start_temp = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	generate_date()
+	date = generate_date()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -18,6 +19,7 @@ func _process(delta):
 	if day > 6:
 		day = 0
 	get_node("Day").set_text(get_day(day))
+		
 
 func get_month(month_int):
 	match month_int:
@@ -117,9 +119,11 @@ func _on_right_pressed():
 
 
 func _on_day_pressed():
-	date_dict = Time.get_datetime_dict_from_unix_time(Time.get_unix_time_from_datetime_string(date))
-	if day == date_dict.weekday:
-		queue_free()
-	else:
-		date = generate_date()
+	if(Global.begin):
+		date_dict = Time.get_datetime_dict_from_unix_time(Time.get_unix_time_from_datetime_string(date))
+		if day == date_dict.weekday:
+			queue_free()
+		else:
+			date = generate_date()
+		
 		
