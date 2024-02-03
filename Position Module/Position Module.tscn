@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://berbjw4t2capb"]
+
+[ext_resource type="Script" path="res://Modules/Basic Module.gd" id="1_g0uva"]
+
+[sub_resource type="GDScript" id="GDScript_ip2d0"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	var Label_temp = \"\"
+	Label_temp += str(get_parent().position.x)
+	Label_temp += \"\\n\"
+	Label_temp += str(get_parent().position.y)
+	set_text(Label_temp)
+"
+
+[node name="Position Module" type="Window"]
+size = Vector2i(233, 377)
+unresizable = true
+always_on_top = true
+script = ExtResource("1_g0uva")
+
+[node name="Close" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 10.0
+offset_right = 167.0
+offset_bottom = 110.0
+text = "Close"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 161.0
+offset_bottom = 287.0
+theme_override_font_sizes/font_size = 30
+text = "Test
+Test"
+script = SubResource("GDScript_ip2d0")
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

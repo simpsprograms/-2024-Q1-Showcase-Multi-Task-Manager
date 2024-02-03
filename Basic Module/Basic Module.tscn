@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm3olsef81mg3"]
+
+[ext_resource type="Script" path="res://Modules/Basic Module.gd" id="1_syogp"]
+
+[node name="Basic Module" type="Window"]
+size = Vector2i(233, 377)
+unresizable = true
+always_on_top = true
+script = ExtResource("1_syogp")
+
+[node name="Close" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 10.0
+offset_right = 167.0
+offset_bottom = 110.0
+text = "Close"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

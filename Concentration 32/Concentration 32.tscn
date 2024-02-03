@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://b57ixxpnvvrv2"]
+
+[ext_resource type="Script" path="res://Modules/Concentration 32.gd" id="1_jcyi2"]
+
+[node name="Basic Module" type="Window"]
+position = Vector2i(0, 36)
+size = Vector2i(377, 377)
+unresizable = true
+always_on_top = true
+script = ExtResource("1_jcyi2")
+
+[node name="Word" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 375.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 45
+text = "Word"
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 110.0
+offset_right = 375.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 45
+text = "0"
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Correct Button" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 260.0
+offset_right = 170.0
+offset_bottom = 360.0
+text = "Sure"
+
+[node name="Wrong Button" type="Button" parent="."]
+offset_left = 200.0
+offset_top = 260.0
+offset_right = 350.0
+offset_bottom = 360.0
+text = "Nope"
+
+[connection signal="pressed" from="Correct Button" to="." method="_on_correct_button_pressed"]
+[connection signal="pressed" from="Wrong Button" to="." method="_on_wrong_button_pressed"]

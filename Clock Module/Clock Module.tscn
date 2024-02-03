@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://chhrwltb2mila"]
+
+[ext_resource type="Script" path="res://Modules/Clock Module.gd" id="1_cv80q"]
+
+[node name="Clock Module" type="Window"]
+position = Vector2i(0, 36)
+size = Vector2i(377, 377)
+unresizable = true
+always_on_top = true
+script = ExtResource("1_cv80q")
+
+[node name="Date" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 363.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 60
+text = "31 Jan 24"
+horizontal_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Left" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 260.0
+offset_right = 70.0
+offset_bottom = 360.0
+text = "<<<"
+
+[node name="Right" type="Button" parent="."]
+offset_left = 305.0
+offset_top = 260.0
+offset_right = 355.0
+offset_bottom = 360.0
+text = ">>>
+"
+
+[node name="Day" type="Button" parent="."]
+offset_left = 88.0
+offset_top = 260.0
+offset_right = 288.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 30
+text = "Wednesday"
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Day" to="." method="_on_day_pressed"]

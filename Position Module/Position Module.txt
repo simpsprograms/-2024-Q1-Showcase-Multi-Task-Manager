@@ -1,0 +1,15 @@
+extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	var Label_temp = ""
+	Label_temp += str(get_parent().position.x)
+	Label_temp += "\n"
+	Label_temp += str(get_parent().position.y)
+	set_text(Label_temp)

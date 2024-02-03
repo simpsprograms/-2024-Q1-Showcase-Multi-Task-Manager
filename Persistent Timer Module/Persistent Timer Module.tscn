@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://6so6a6818n0x"]
+
+[ext_resource type="Script" path="res://Modules/Persistent Timer Module.gd" id="1_4vr74"]
+
+[node name="Persistent Timer Module" type="Window"]
+size = Vector2i(233, 377)
+unresizable = true
+always_on_top = true
+script = ExtResource("1_4vr74")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_top = 10.0
+offset_right = 40.5
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "Time Left: "
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_top = 30.0
+offset_right = 92.0
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 72
+text = "10.00"
+horizontal_alignment = 1
+
+[node name="Limit Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = 120.0
+offset_right = 71.0
+offset_bottom = 143.0
+grow_horizontal = 2
+text = "Dont exceed: 10.00"
+horizontal_alignment = 1
+
+[node name="Wind" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 237.0
+offset_right = 167.0
+offset_bottom = 337.0
+text = "Wind"
+
+[node name="Wind Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.5
+offset_top = 343.0
+offset_right = 40.5
+offset_bottom = 366.0
+grow_horizontal = 2
+text = "+8.00s"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Wind" to="." method="_on_wind_pressed"]
